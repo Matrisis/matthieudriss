@@ -9,11 +9,11 @@ For trivial tasks, use judgment and avoid unnecessary ceremony.
 
 ## Project Context
 
-[Project description — fill in once the project takes shape.]
+Landing page for Audit Claude Code & Agentic Dev service. French B2B lead generation site. Single-page static site, no build step.
 
-Stack: [to be determined]
+Stack: HTML, CSS, vanilla JS
 
-Important directories: [to be determined]
+Important directories: `/` — root contains index.html, styles.css, DESIGN.md, CLAUDE.md
 
 ---
 

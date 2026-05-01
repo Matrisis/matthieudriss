@@ -8,12 +8,12 @@
 <meta property="og:title" content="Audit Claude Code — Industrialisez votre workflow IA en équipe" />
 <meta property="og:description" content="Audit Claude Code pour agences et équipes SaaS. Diagnostic complet de votre workflow IA : tokens, qualité, sécurité, ROI." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://audit-claude-code.fr" />
+<meta property="og:url" content="https://matthieu-driss.fr" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Audit Claude Code — Industrialisez votre workflow IA en équipe" />
 <meta name="twitter:description" content="Audit Claude Code pour agences et équipes SaaS. Diagnostic complet : tokens, qualité, sécurité, ROI." />
-<link rel="canonical" href="https://audit-claude-code.fr" />
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23222'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='monospace' font-size='16' font-weight='bold' fill='white'%3ECC%3C/text%3E%3C/svg%3E" />
+<link rel="canonical" href="https://matthieu-driss.fr" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23222'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='monospace' font-size='16' font-weight='bold' fill='white'%3EMD%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -41,8 +41,9 @@
   "name": "Audit Claude Code & Agentic Dev",
   "description": "Audit Claude Code pour agences et équipes SaaS. Diagnostic complet de votre workflow IA : tokens, qualité, sécurité, ROI.",
   "provider": {
-    "@type": "Organization",
-    "name": "Audit Claude Code & Agentic Dev"
+    "@type": "Person",
+    "name": "Matthieu Driss",
+    "url": "https://matthieu-driss.fr"
   },
   "serviceType": "Audit technique",
   "areaServed": {"@type": "Country", "name": "France"},
@@ -62,8 +63,8 @@
 <nav class="nav" id="topnav">
   <div class="container nav__inner">
     <a href="#top" class="nav__brand">
-      <span class="nav__mark">CC</span>
-      <span>Audit Claude Code &amp; Agentic Dev</span>
+      <span class="nav__mark">MD</span>
+      <span>Matthieu Driss Consulting</span>
     </a>
     <div class="nav__links">
       <a href="#probleme">Problème</a>
@@ -363,7 +364,7 @@
       </div>
       <div style="margin-top:40px;padding:28px 32px;border:1px solid var(--line);border-radius:var(--radius);background:var(--bg-alt);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
         <div><strong style="font-size:16px;font-weight:500;letter-spacing:-0.01em">Envie de voir un exemple concret ?</strong><p style="margin:6px 0 0;font-size:14px;color:var(--ink-2)">Recevez un extrait de rapport d'audit anonymisé pour voir à quoi ressemblent les livrables.</p></div>
-        <a class="btn btn--primary" href="#contact" style="flex-shrink:0">Recevoir un exemple <span class="arrow">→</span></a>
+        <a class="btn btn--primary" href="mailto:contact@matthieu-driss.fr">Recevoir un exemple <span class="arrow">→</span></a>
       </div>
     </div>
   </section>
@@ -599,7 +600,10 @@
           <p>Quelques questions pour comprendre votre contexte. Je reviens vers vous sous 48h ouvrées avec une réponse claire — y compris si l'audit ne semble pas pertinent pour votre situation.</p>
         </div>
       </div>
-      <form class="form" id="contactForm">
+      <form class="form" id="contactForm" action="https://formsubmit.co/contact@matthieu-driss.fr" method="POST">
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="http://localhost:8000?sent=true#contact" />
+        <input type="text" name="_gotcha" style="display:none" />
         <div class="field"><label for="f-prenom">Prénom</label><input id="f-prenom" name="prenom" required /></div>
         <div class="field"><label for="f-nom">Nom</label><input id="f-nom" name="nom" required /></div>
         <div class="field"><label for="f-email">Email professionnel</label><input id="f-email" type="email" name="email" required /></div>
@@ -641,10 +645,26 @@
           <span class="mono" style="color:var(--ink-3)">Réponse sous 48h ouvrées · Confidentialité garantie</span>
         </div>
       </form>
-      <div class="form-success" id="formSuccess" style="display:none;max-width:720px">
-        <strong>Demande reçue.</strong>
-        Merci. Je vais analyser votre contexte et revenir vers vous avec une réponse adaptée.<br/><br/>
-        En attendant, vous pouvez préparer : un exemple de tâche confiée à Claude Code, un exemple de PR générée par IA, votre structure de repo, vos scripts test/lint/build, vos questions sur coûts, agents, MCPs ou sécurité.
+      <div class="form-success" id="formSuccess" style="display:none">
+        <div class="form-success__badge" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="14" cy="14" r="14" fill="currentColor" fill-opacity="0.12"/>
+            <path d="M9 14.5L12.5 18L19 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="form-success__content">
+          <p class="form-success__heading">Message envoyé</p>
+          <p class="form-success__body">Merci. Je vais analyser votre contexte et revenir vers vous sous <strong>48h ouvrées</strong> avec une réponse adaptée — y compris si l'audit ne semble pas pertinent pour votre situation.</p>
+          <div class="form-success__next">
+            <p class="form-success__next-label">D'ici là, vous pouvez préparer :</p>
+            <ul class="form-success__next-list">
+              <li>Un exemple de tâche confiée à Claude Code</li>
+              <li>Un exemple de PR générée par IA</li>
+              <li>Votre structure de repo et vos scripts test / lint / build</li>
+              <li>Vos questions sur coûts, agents, MCPs ou sécurité</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -667,12 +687,13 @@
 
 <footer class="footer">
   <div class="container footer__inner">
-    <div>© 2026 · Audit Claude Code &amp; Agentic Dev</div>
+    <div>© 2026 · Matthieu Driss — Audit Claude Code &amp; Agentic Dev</div>
     <div class="footer__links">
       <a href="#contact">Contact</a>
       <a href="#faq">FAQ</a>
       
-      <a href="https://linkedin.com/in/matthieu-driss">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/matthieu-d/">LinkedIn</a>
+      <a href="mailto:contact@matthieu-driss.fr">Email</a>
     </div>
   </div>
 </footer>
@@ -730,16 +751,22 @@
     });
   });
 
-  /* Contact form */
+  /* Contact form — native submit (works with file:// + production) */
   var form = document.getElementById('contactForm');
-  var success = document.getElementById('formSuccess');
   if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      form.style.display = 'none';
-      if (success) success.style.display = '';
-      window.scrollTo({ top: success.getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' });
+    var btn = form.querySelector('button[type="submit"]');
+    form.addEventListener('submit', function() {
+      btn.disabled = true;
+      btn.textContent = 'Envoi…';
     });
+  }
+  /* Show success after redirect if ?sent=true */
+  var urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('sent') === 'true') {
+    var f = document.getElementById('contactForm');
+    var s = document.getElementById('formSuccess');
+    if (f) f.style.display = 'none';
+    if (s) s.style.display = '';
   }
 
   /* Magnetic CTA hover */
