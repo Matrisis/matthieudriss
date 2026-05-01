@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Audit Claude Code — Industrialisez votre workflow IA en équipe</title>
+<meta name="description" content="Audit Claude Code pour agences, studios produit et équipes SaaS. Réduisez le gaspillage de tokens, améliorez la qualité du code IA, sécurisez MCPs et skills, mesurez votre ROI." />
+<meta property="og:title" content="Audit Claude Code — Industrialisez votre workflow IA en équipe" />
+<meta property="og:description" content="Audit Claude Code pour agences et équipes SaaS. Diagnostic complet de votre workflow IA : tokens, qualité, sécurité, ROI." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://audit-claude-code.fr" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Audit Claude Code — Industrialisez votre workflow IA en équipe" />
+<meta name="twitter:description" content="Audit Claude Code pour agences et équipes SaaS. Diagnostic complet : tokens, qualité, sécurité, ROI." />
+<link rel="canonical" href="https://audit-claude-code.fr" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23222'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='monospace' font-size='16' font-weight='bold' fill='white'%3ECC%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Est-ce une formation Claude Code ?","acceptedAnswer":{"@type":"Answer","text":"Non. L'audit peut inclure des recommandations pédagogiques, mais ce n'est pas une formation générique. L'objectif est d'analyser votre workflow réel, votre repo, vos coûts, vos outils et vos pratiques pour identifier ce qui doit être amélioré."}},
+    {"@type":"Question","name":"Faut-il déjà utiliser Claude Code ?","acceptedAnswer":{"@type":"Answer","text":"C'est préférable. L'audit est plus utile si vous avez déjà des usages, même imparfaits. Si vous n'utilisez pas encore Claude Code, l'audit peut aussi servir à définir un plan d'adoption."}},
+    {"@type":"Question","name":"Garantissez-vous une réduction des coûts ?","acceptedAnswer":{"@type":"Answer","text":"Non, pas sans diagnostic. L'objectif est d'identifier les gaspillages et d'améliorer le rapport coût/résultat. Dans certains cas, la priorité sera de réduire les tokens. Dans d'autres, ce sera d'améliorer la qualité des PRs ou de réduire le temps de review."}},
+    {"@type":"Question","name":"Pouvez-vous implémenter les recommandations ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Après l'audit, une mission d'implémentation peut être proposée pour mettre en place les recommandations prioritaires : CLAUDE.md, skills, agents, MCPs, hooks, workflows GitHub, monitoring ou formation équipe."}},
+    {"@type":"Question","name":"Est-ce adapté aux données sensibles ?","acceptedAnswer":{"@type":"Answer","text":"Oui, à condition de cadrer précisément les accès, permissions, outils connectés et règles internes. Une partie de l'audit porte justement sur ces sujets : sécurité, gouvernance, permissions, MCPs et risques liés aux secrets."}},
+    {"@type":"Question","name":"Combien de temps dure l'audit ?","acceptedAnswer":{"@type":"Answer","text":"L'audit pilote dure entre 3 et 5 jours selon la taille du repo, le nombre de personnes impliquées et le niveau de profondeur souhaité."}},
+    {"@type":"Question","name":"Travaillez-vous avec des freelances ou solo founders ?","acceptedAnswer":{"@type":"Answer","text":"Oui, si le projet est déjà sérieux et possède un repo actif. Mais l'offre est principalement conçue pour les équipes qui ont des enjeux de qualité, coût, sécurité et workflow collectif."}},
+    {"@type":"Question","name":"Pourquoi ne pas simplement lire la documentation Anthropic ?","acceptedAnswer":{"@type":"Answer","text":"La documentation explique les fonctionnalités. L'audit analyse votre contexte réel : votre repo, vos usages, vos coûts, vos contraintes, vos erreurs actuelles et les automatisations réellement utiles pour votre équipe."}}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Audit Claude Code & Agentic Dev",
+  "description": "Audit Claude Code pour agences et équipes SaaS. Diagnostic complet de votre workflow IA : tokens, qualité, sécurité, ROI.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Audit Claude Code & Agentic Dev"
+  },
+  "serviceType": "Audit technique",
+  "areaServed": {"@type": "Country", "name": "France"},
+  "offers": {
+    "@type": "Offer",
+    "price": "750",
+    "priceCurrency": "EUR",
+    "description": "Audit pilote à partir de 750€ HT"
+  }
+}
+</script>
+</head>
+<body data-density="compact">
+
+<a href="#main" class="skip-link">Aller au contenu principal</a>
+
+<nav class="nav" id="topnav">
+  <div class="container nav__inner">
+    <a href="#top" class="nav__brand">
+      <span class="nav__mark">CC</span>
+      <span>Audit Claude Code &amp; Agentic Dev</span>
+    </a>
+    <div class="nav__links">
+      <a href="#probleme">Problème</a>
+      <a href="#offre">Offre</a>
+      <a href="#livrables">Livrables</a>
+      <a href="#methode">Méthode</a>
+      <a href="#pour-qui">Pour qui</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <button class="nav__hamburger" id="navToggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <a class="nav__cta" href="#contact">Audit pilote →</a>
+  </div>
+</nav>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<main id="main">
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero hero--center container" id="top">
+    <div class="hero__center">
+      <h1 class="h1 hero__title">Claude Code est puissant.<br/>Sans workflow, il devient coûteux.</h1>
+      <p class="lead hero__lead">Je vous aide à transformer Claude Code d'un outil expérimental en système de développement fiable, mesurable et adapté à votre équipe.</p>
+      <div class="hero__ctas">
+        <a class="btn btn--primary" href="#contact">Réserver un audit Claude Code <span class="arrow">→</span></a>
+        <a class="btn btn--ghost" href="#audited">Découvrir les 6 axes de l'audit</a>
+      </div>
+      <div class="hero__meta">
+        <span>Audit remote</span>
+        <span>3 à 5 jours</span>
+        <span>Équipes utilisant déjà Claude Code, Cursor ou Copilot</span>
+      </div>
+      <div class="diagram hero__diagram">
+        <div class="diagram__row">
+          <div class="diagram__lbl">Avant</div>
+          <div class="diagram__chain">
+            <span class="diagram__node">Prompts improvisés</span>
+            <span class="diagram__arrow">→</span>
+            <span class="diagram__node">Sessions longues</span>
+            <span class="diagram__arrow">→</span>
+            <span class="diagram__node">PRs instables</span>
+            <span class="diagram__arrow">→</span>
+            <span class="diagram__node">Coûts flous</span>
+          </div>
+        </div>
+        <div class="diagram__row diagram__row--after">
+          <div class="diagram__lbl">Après</div>
+          <div class="diagram__chain">
+            <span class="diagram__node">Contexte structuré</span>
+            <span class="diagram__arrow">→</span>
+            <span class="diagram__node">Agents spécialisés</span>
+            <span class="diagram__arrow">→</span>
+            <span class="diagram__node">Tests automatisés</span>
+            <span class="diagram__arrow">→</span>
+            <span class="diagram__node">ROI mesuré</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero__cred">
+        <span>Développeur senior</span>
+        <span>Spécialiste Claude Code</span>
+        <span>Agents · MCPs · Skills · Hooks</span>
+        <span>CI/CD · Workflows IA</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PROBLEM ═══ -->
+  <section class="section" id="probleme">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow"><span>01</span> <span>Le problème</span></div>
+          <h2 class="h2">Votre équipe utilise Claude Code. Mais est-ce que cela crée vraiment de la valeur&nbsp;?</h2>
+        </div>
+        <div class="sec-head__intro body">
+          <p>Les premières sessions avec Claude Code sont souvent impressionnantes. L'agent comprend le repo, modifie du code, génère des fonctions, corrige des bugs et accélère certaines tâches.</p>
+          <p>Puis les limites apparaissent. Les sessions deviennent longues. Les tokens partent vite. Les résultats varient selon les développeurs. Les PRs demandent trop de review. Claude perd le contexte. Les agents sont mal cadrés. Et personne ne sait vraiment si le gain compense le coût.</p>
+        </div>
+      </div>
+      <ul class="pain-list">
+        <li>Claude Code est utilisé différemment par chaque développeur</li>
+        <li>Les prompts sont improvisés et non réutilisables</li>
+        <li>Les sessions consomment trop de tokens pour peu de résultats</li>
+        <li>Les PRs générées par IA sont difficiles à relire</li>
+        <li>Les tests, le lint ou la CI ne sont pas intégrés au workflow</li>
+        <li>Le repo n'est pas préparé pour être compris par un agent</li>
+        <li>Les MCPs, skills ou subagents sont mal choisis ou absents</li>
+        <li>Les permissions et accès ne sont pas suffisamment cadrés</li>
+        <li>Le ROI réel de Claude Code n'est pas mesuré</li>
+      </ul>
+      <div class="impact">Le problème n'est pas Claude Code. Le problème est l'absence de système autour de Claude Code.</div>
+    </div>
+  </section>
+
+  <!-- ═══ HIDDEN COST ═══ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow"><span>02</span> <span>Coût caché</span></div>
+          <h2 class="h2">Le vrai coût n'est pas seulement le token. C'est le travail IA inutilisable.</h2>
+        </div>
+        <div class="sec-head__intro body">
+          <p>Se concentrer uniquement sur la facture Claude est une erreur. Le vrai gaspillage vient des tâches mal cadrées, des contextes trop lourds, des agents qui partent dans la mauvaise direction, des PRs à reprendre, des bugs introduits et du temps senior passé à nettoyer derrière l'IA.</p>
+        </div>
+      </div>
+      <div class="grid grid--4">
+        <div class="cell"><div class="cell__num">01</div><h3 class="cell__title">Tokens gaspillés</h3><p class="cell__body">Sessions trop longues, contexte mal découpé, mauvais choix de modèle, instructions répétées.</p></div>
+        <div class="cell"><div class="cell__num">02</div><h3 class="cell__title">Temps dev gaspillé</h3><p class="cell__body">Prompts non standardisés, résultats imprévisibles, allers-retours inutiles, absence de workflow partagé.</p></div>
+        <div class="cell"><div class="cell__num">03</div><h3 class="cell__title">Qualité dégradée</h3><p class="cell__body">Code généré vite, mais difficile à maintenir, peu testé, mal intégré au reste du repo.</p></div>
+        <div class="cell"><div class="cell__num">04</div><h3 class="cell__title">Risque opérationnel</h3><p class="cell__body">Permissions floues, MCPs non maîtrisés, secrets exposés, agents trop autonomes sans garde-fous.</p></div>
+      </div>
+      <div class="impact" style="border-color:var(--ink-3)">L'objectif n'est pas d'utiliser Claude Code plus souvent. L'objectif est de l'utiliser mieux, sur les bonnes tâches, avec les bons garde-fous.</div>
+    </div>
+  </section>
+
+  <!-- ═══ OFFER ═══ -->
+  <section class="section" id="offre">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow"><span>03</span> <span>L'offre</span></div>
+          <h2 class="h2">Un audit pour transformer Claude Code en workflow dev fiable</h2>
+        </div>
+        <div class="sec-head__intro body">
+          <p>L'<strong>Audit Claude Code &amp; Agentic Dev</strong> analyse votre usage actuel : prompts, structure du repo, contexte projet, coûts, tests, CI/CD, MCPs, skills, agents, hooks, permissions et pratiques d'équipe.</p>
+          <p>À la fin, vous obtenez une vision claire de ce qui fonctionne, de ce qui gaspille du temps ou des tokens, et des actions prioritaires pour rendre votre workflow IA plus fiable, plus sûr et plus rentable.</p>
+        </div>
+      </div>
+      <div class="pricing">
+        <div class="pricing__main">
+          <div class="mono" style="color:var(--accent);margin-bottom:12px">Audit pilote · 5 places</div>
+          <h3 class="h3" style="font-size:28px;margin-bottom:8px">Audit Claude Code &amp; Agentic Dev</h3>
+          <p class="body" style="margin-top:0">Un diagnostic complet de votre workflow IA de développement, livré avec un plan d'action concret.</p>
+          <div class="pricing__price" style="margin-top:28px">à partir de 750&nbsp;€ <small>HT · phase pilote</small></div>
+          <ul class="pricing__list">
+            <li>Identifier les sources de gaspillage tokens</li>
+            <li>Améliorer la qualité des outputs Claude Code</li>
+            <li>Réduire les sessions longues et improductives</li>
+            <li>Structurer un workflow commun pour l'équipe</li>
+            <li>Mettre en place les bons agents, skills, hooks et MCPs</li>
+            <li>Sécuriser les permissions et outils connectés</li>
+            <li>Mesurer le ROI réel de l'IA dans le développement</li>
+            <li>Prioriser les automatisations qui créent vraiment de la valeur</li>
+          </ul>
+          <a class="btn btn--primary" href="#contact">Réserver un audit pilote <span class="arrow">→</span></a>
+          <p class="mono" style="color:var(--ink-3);margin-top:18px">Vous ne payez pas pour une formation générique.<br/>Vous payez pour un diagnostic senior de votre workflow réel.</p>
+        </div>
+        <div class="pricing__side">
+          <div>
+            <div class="mono" style="color:var(--ink-3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px">Format</div>
+            <dl class="pricing__meta">
+              <div><dt>Durée</dt><dd>3 à 5 jours</dd></div>
+              <div><dt>Format</dt><dd>Remote</dd></div>
+              <div><dt>Cible</dt><dd>Équipes 3–40 dev</dd></div>
+              <div><dt>Disponibilité</dt><dd>5 audits pilotes</dd></div>
+            </dl>
+          </div>
+          <hr/>
+          <div>
+            <div class="mono" style="color:var(--ink-3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px">Garantie clarté</div>
+            <p style="margin:0;font-size:14px;color:var(--ink-2);line-height:1.55">Si la restitution ne vous donne pas un plan d'action exploitable, je retravaille le rapport gratuitement jusqu'à ce qu'il soit clair et actionnable.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BEFORE/AFTER ═══ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow"><span>04</span> <span>Transformation</span></div>
+          <h2 class="h2">Passez d'un usage improvisé à un système reproductible</h2>
+        </div>
+        <div class="sec-head__intro body">
+          <p>Claude Code devient réellement utile quand il cesse d'être un outil individuel et devient un système d'équipe.</p>
+        </div>
+      </div>
+      <div class="compare">
+        <div class="compare__head">
+          <div>Avant — usage improvisé</div>
+          <div>Après — workflow industrialisé</div>
+        </div>
+        <div class="compare__row"><div>Chaque dev utilise Claude Code à sa manière</div><div>Workflow partagé par l'équipe</div></div>
+        <div class="compare__row"><div>Sessions longues et coûteuses</div><div>Tâches découpées et mieux cadrées</div></div>
+        <div class="compare__row"><div>Prompts improvisés</div><div>Instructions projet structurées</div></div>
+        <div class="compare__row"><div>Claude perd le contexte</div><div>Repo préparé pour l'agent</div></div>
+        <div class="compare__row"><div>PRs difficiles à relire</div><div>PRs plus petites, testées et mieux intégrées</div></div>
+        <div class="compare__row"><div>MCPs ajoutés au hasard</div><div>MCPs choisis selon leur valeur réelle</div></div>
+        <div class="compare__row"><div>Aucun suivi du ROI</div><div>Métriques de coût, qualité et productivité</div></div>
+        <div class="compare__row"><div>Risques permissions flous</div><div>Garde-fous et règles d'usage claires</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ AUDIT SCOPE ═══ -->
+  <section class="section" id="audited">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow"><span>05</span> <span>Périmètre</span></div>
+          <h2 class="h2">Ce que j'analyse pendant l'audit</h2>
+        </div>
+        <div class="sec-head__intro body">
+          <p>Six dimensions, examinées en parallèle, pour produire un diagnostic actionnable. Chaque bloc est traité avec votre stack, votre repo et vos pratiques réelles — pas une checklist générique.</p>
+        </div>
+      </div>
+      <div class="scope">
+        <article class="scope__card">
+          <div class="scope__num">01 / 06</div>
+          <h3 class="scope__title">Usage actuel</h3>
+          <p class="scope__desc">Comment votre équipe utilise Claude Code aujourd'hui : tâches confiées, niveau d'autonomie, qualité des instructions, points de blocage.</p>
+          <ul class="scope__points"><li>Tâches confiées</li><li>Prompts</li><li>Sessions bloquées</li><li>Échecs fréquents</li><li>Reprises manuelles</li><li>Autonomie agent</li></ul>
+        </article>
+        <article class="scope__card">
+          <div class="scope__num">02 / 06</div>
+          <h3 class="scope__title">Préparation du repo</h3>
+          <p class="scope__desc">Un repo lisible pour un humain n'est pas forcément lisible pour un agent. J'analyse si Claude Code reçoit le bon contexte.</p>
+          <ul class="scope__points"><li>Structure repo</li><li>CLAUDE.md</li><li>Scripts test/lint/build</li><li>Conventions</li><li>Architecture</li><li>Instructions persistantes</li></ul>
+        </article>
+        <article class="scope__card">
+          <div class="scope__num">03 / 06</div>
+          <h3 class="scope__title">Coûts et tokens</h3>
+          <p class="scope__desc">Sources de gaspillage : contexte trop lourd, instructions répétées, mauvais choix de modèles, agents trop généralistes.</p>
+          <ul class="scope__points"><li>Tokens par tâche</li><li>Sessions longues</li><li>Contexte inutile</li><li>Découpage tâches</li><li>Modèles</li><li>Métriques</li></ul>
+        </article>
+        <article class="scope__card">
+          <div class="scope__num">04 / 06</div>
+          <h3 class="scope__title">Qualité du code</h3>
+          <p class="scope__desc">Claude Code peut générer vite. Mais ce qui compte, c'est ce qui peut être mergé, maintenu et déployé.</p>
+          <ul class="scope__points"><li>Qualité PRs</li><li>Tests</li><li>Régressions</li><li>Dette technique</li><li>Lisibilité</li><li>Temps de review</li></ul>
+        </article>
+        <article class="scope__card">
+          <div class="scope__num">05 / 06</div>
+          <h3 class="scope__title">Architecture agentique</h3>
+          <p class="scope__desc">Automatisations utiles : skills, subagents spécialisés, MCPs pertinents, hooks de validation, workflows GitHub.</p>
+          <ul class="scope__points"><li>Skills</li><li>Subagents</li><li>MCPs</li><li>Hooks</li><li>Workflows GitHub</li><li>Intégrations</li></ul>
+        </article>
+        <article class="scope__card">
+          <div class="scope__num">06 / 06</div>
+          <h3 class="scope__title">Sécurité &amp; gouvernance</h3>
+          <p class="scope__desc">Risques liés aux permissions, aux commandes exécutées, aux outils connectés, aux secrets et à l'autonomie des agents.</p>
+          <ul class="scope__points"><li>Permissions</li><li>Accès fichiers</li><li>Commandes sensibles</li><li>Secrets</li><li>MCPs externes</li><li>Garde-fous</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ DELIVERABLES ═══ -->
+  <section class="section section--alt" id="livrables">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow"><span>06</span> <span>Livrables</span></div>
+          <h2 class="h2">Ce que vous recevez à la fin de l'audit</h2>
+        </div>
+        <div class="sec-head__intro body">
+          <p>Un livrable est utile s'il aide à décider. Chaque sortie est conçue pour être partagée avec votre équipe, votre direction technique ou votre comité, et déboucher sur une action concrète.</p>
+        </div>
+      </div>
+      <div class="deliv">
+        <div class="deliv__row">
+          <div class="deliv__num">01</div>
+          <h3 class="deliv__title">Rapport d'audit complet</h3>
+          <p class="deliv__body">Un document clair qui synthétise l'état actuel de votre usage, les points de friction, les risques, les gaspillages et les opportunités d'amélioration.</p>
+        </div>
+        <div class="deliv__row">
+          <div class="deliv__num">02</div>
+          <h3 class="deliv__title">Score de maturité Agentic Dev</h3>
+          <p class="deliv__body">Évaluation de votre workflow selon plusieurs dimensions : coûts, qualité, sécurité, adoption équipe, automatisation, maintenabilité et mesurabilité.</p>
+        </div>
+        <div class="deliv__row">
+          <div class="deliv__num">03</div>
+          <h3 class="deliv__title">Roadmap priorisée</h3>
+          <p class="deliv__body">Un plan d'action concret en trois niveaux : quick wins immédiats, améliorations à court terme et automatisations avancées.</p>
+        </div>
+        <div class="deliv__row">
+          <div class="deliv__num">04</div>
+          <h3 class="deliv__title">Recommandations techniques</h3>
+          <p class="deliv__body">Adaptées à votre contexte : CLAUDE.md, skills, agents, MCPs, hooks, permissions, CI/CD, prompts et règles projet.</p>
+        </div>
+        <div class="deliv__row">
+          <div class="deliv__num">05</div>
+          <h3 class="deliv__title">Session de restitution</h3>
+          <p class="deliv__body">Un call de 60 à 90 minutes pour parcourir le rapport, répondre aux questions et décider des prochaines étapes.</p>
+        </div>
+        <div class="deliv__row">
+          <div class="deliv__num">06</div>
+          <h3 class="deliv__title">Option d'implémentation</h3>
+          <p class="deliv__body">Si vous le souhaitez, je peux ensuite mettre en place les recommandations : skills, agents, hooks, MCPs, workflows GitHub, monitoring ou formation équipe.</p>
+        </div>
+      </div>
+      <div style="margin-top:40px;padding:28px 32px;border:1px solid var(--line);border-radius:var(--radius);background:var(--bg-alt);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+        <div><strong style="font-size:16px;font-weight:500;letter-spacing:-0.01em">Envie de voir un exemple concret ?</strong><p style="margin:6px 0 0;font-size:14px;color:var(--ink-2)">Recevez un extrait de rapport d'audit anonymisé pour voir à quoi ressemblent les livrables.</p></div>
+        <a class="btn btn--primary" href="#contact" style="flex-shrink:0">Recevoir un exemple <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ METHOD ═══ -->
+  <section class="section" id="methode">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow"><span>07</span> <span>Méthode</span></div>
+          <h2 class="h2">Une méthode simple, technique et orientée résultat</h2>
+        </div>
+        <div class="sec-head__intro body">
+          <p>Cinq étapes en 3 à 5 jours, calibrées pour produire de la valeur dès la restitution — pas pour étirer la mission.</p>
+        </div>
+      </div>
+      <div class="method">
+        <div class="method__step">
+          <div class="method__num">01</div>
+          <h3 class="method__title">Cadrage</h3>
+          <p class="method__body">Nous clarifions votre contexte : équipe, stack, repo, outils IA, objectifs, contraintes, niveau d'adoption et problèmes actuels.</p>
+        </div>
+        <div class="method__step">
+          <div class="method__num">02</div>
+          <h3 class="method__title">Analyse</h3>
+          <p class="method__body">J'analyse votre workflow Claude Code, votre codebase, vos règles projet, vos prompts, vos outils connectés, vos coûts et vos pratiques.</p>
+        </div>
+        <div class="method__step">
+          <div class="method__num">03</div>
+          <h3 class="method__title">Diagnostic</h3>
+          <p class="method__body">Je formalise problèmes, risques, gaspillages et opportunités dans un rapport clair et actionnable.</p>
+        </div>
+        <div class="method__step">
+          <div class="method__num">04</div>
+          <h3 class="method__title">Roadmap</h3>
+          <p class="method__body">Je priorise les actions selon leur impact : quick wins, améliorations structurantes et automatisations avancées.</p>
+        </div>
+        <div class="method__step">
+          <div class="method__num">05</div>
+          <h3 class="method__title">Restitution</h3>
+          <p class="method__body">Nous passons ensemble le diagnostic et décidons quoi corriger, quoi automatiser et quoi mesurer en priorité.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOR WHOM ═══ -->
+  <section class="section section--alt" id="pour-qui">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow"><span>08</span> <span>Pour qui</span></div>
+          <h2 class="h2">Pour les équipes qui veulent utiliser Claude Code sérieusement</h2>
+        </div>
+        <div class="sec-head__intro body">
+          <p>Le meilleur client pour cet audit a déjà compris que Claude Code est puissant, mais veut maintenant savoir comment l'utiliser avec méthode, contrôle et retour sur investissement.</p>
+        </div>
+      </div>
+      <div class="split">
+        <div class="split__col">
+          <h3 class="is-yes">→ Adapté pour</h3>
+          <ul>
+            <li>Une agence web ou logicielle</li>
+            <li>Un studio produit</li>
+            <li>Une petite ESN</li>
+            <li>Une équipe SaaS</li>
+            <li>Un CTO ou tech lead</li>
+            <li>Une équipe de 3 à 40 développeurs</li>
+            <li>Une équipe utilisant déjà Claude Code, Cursor, Copilot ou ChatGPT pour coder</li>
+            <li>Une équipe qui veut structurer son usage de l'IA avant de le généraliser</li>
+          </ul>
+        </div>
+        <div class="split__col">
+          <h3 class="is-no">× Pas adapté pour</h3>
+          <ul>
+            <li>Vous cherchez une formation débutant à ChatGPT</li>
+            <li>Vous n'avez aucun repo ou workflow dev existant</li>
+            <li>Vous voulez remplacer vos développeurs par des agents</li>
+            <li>Vous cherchez une solution magique</li>
+            <li>Vous n'êtes pas prêt à modifier vos pratiques internes</li>
+            <li>Vous voulez seulement une liste d'outils à tester</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CASES ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow"><span>09</span> <span>Cas d'usage</span></div>
+          <h2 class="h2">Situations où l'audit devient utile</h2>
+        </div>
+        <div class="sec-head__intro body">
+          <p>Si une seule de ces situations vous parle, l'audit a probablement un retour sur investissement immédiat pour votre équipe.</p>
+        </div>
+      </div>
+      <div class="cases">
+        <div class="case"><div class="case__num">Cas 01</div><h3 class="case__title">Chaque dev a sa propre méthode</h3><p class="case__body">Impossible de comparer les résultats, de standardiser les pratiques ou de savoir ce qui fonctionne vraiment.</p></div>
+        <div class="case"><div class="case__num">Cas 02</div><h3 class="case__title">Vos coûts IA augmentent sans visibilité</h3><p class="case__body">Vous voyez la consommation monter, mais ne savez pas quelles tâches créent de la valeur et lesquelles gaspillent des tokens.</p></div>
+        <div class="case"><div class="case__num">Cas 03</div><h3 class="case__title">Les PRs IA demandent trop de review</h3><p class="case__body">Claude produit du code rapidement, mais vos seniors passent trop de temps à corriger, relire ou réécrire.</p></div>
+        <div class="case"><div class="case__num">Cas 04</div><h3 class="case__title">Votre repo n'est pas prêt pour l'agentique</h3><p class="case__body">Documentation manquante, scripts absents, conventions floues, tests fragiles : Claude Code travaille avec un mauvais contexte.</p></div>
+        <div class="case"><div class="case__num">Cas 05</div><h3 class="case__title">Vous voulez utiliser MCPs/skills/agents</h3><p class="case__body">L'audit vous aide à distinguer les automatisations utiles des gadgets qui ajoutent seulement de la complexité.</p></div>
+        <div class="case"><div class="case__num">Cas 06</div><h3 class="case__title">Vous voulez généraliser à l'équipe</h3><p class="case__body">Avant d'ouvrir l'usage à tout le monde, vous voulez des règles, des garde-fous et une méthode commune.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ IMPLEMENTATION ═══ -->
+  <section class="section section--deep">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow"><span>10</span> <span>Après l'audit</span></div>
+          <h2 class="h2">Je peux aussi construire le système avec vous</h2>
+        </div>
+        <div class="sec-head__intro body" style="color:var(--text-on-deep)">
+          <p>L'audit donne la direction. Si vous voulez aller plus vite, je prends ensuite en charge l'implémentation des recommandations prioritaires.</p>
+        </div>
+      </div>
+      <div class="impl-card">
+        <div>
+          <div class="mono" style="color:var(--accent-on-deep);margin-bottom:14px">Claude Code Production Sprint</div>
+          <h3>Un sprint d'implémentation pour passer en production</h3>
+          <p>Règles projet, skills, agents, hooks, MCPs, CI/CD, monitoring et playbook d'équipe — mis en place avec vos développeurs, testés sur votre repo réel.</p>
+          <div class="mono" style="color:var(--text-bright-on-deep);margin-top:24px;font-size:14px">À partir de 3&nbsp;000&nbsp;€ HT — selon le périmètre.</div>
+          <a class="btn btn--accent" href="#contact" style="margin-top:24px">Commencer par un audit <span class="arrow">→</span></a>
+        </div>
+        <div>
+          <div class="mono" style="color:var(--accent-dim-on-deep);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:16px;font-size:11px">Exemples d'implémentations</div>
+          <ul class="impl-list">
+            <li>Création ou refonte du CLAUDE.md</li>
+            <li>Skills Claude Code pour vos workflows récurrents</li>
+            <li>Agents spécialisés (review, tests, refactor, docs)</li>
+            <li>Configuration de hooks de validation</li>
+            <li>Sélection et configuration de MCPs utiles</li>
+            <li>Intégration GitHub ou GitLab</li>
+            <li>Scripts test/lint/build exploitables par Claude</li>
+            <li>Playbook d'usage pour l'équipe</li>
+            <li>Mise en place de métriques de suivi</li>
+            <li>Formation opérationnelle de l'équipe</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CREDIBILITY ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow"><span>11</span> <span>Approche</span></div>
+          <h2 class="h2">Pourquoi travailler avec moi</h2>
+        </div>
+        <div class="sec-head__intro body">
+          <p>Je suis développeur senior et j'utilise Claude Code quotidiennement dans des contextes réels de développement. Mon approche n'est pas de vendre de la hype IA, mais de transformer les outils agents en workflows utiles, mesurables et maintenables.</p>
+          <p>Veille continue sur Claude, MCP, agents, skills, hooks, plugins et pratiques émergentes. Cette veille me permet de recommander ce qui apporte réellement de la valeur — et d'écarter ce qui ajoute seulement de la complexité.</p>
+        </div>
+      </div>
+      <div class="grid grid--3" style="margin-bottom:40px">
+        <div class="cell"><div class="cell__num">01</div><h3 class="cell__title" style="font-size:16px">Développeur senior</h3></div>
+        <div class="cell"><div class="cell__num">02</div><h3 class="cell__title" style="font-size:16px">Usage quotidien de Claude Code</h3></div>
+        <div class="cell"><div class="cell__num">03</div><h3 class="cell__title" style="font-size:16px">Architecture, code, tests, CI/CD et delivery</h3></div>
+        <div class="cell"><div class="cell__num">04</div><h3 class="cell__title" style="font-size:16px">Veille spécialisée Claude / Anthropic / agentic coding</h3></div>
+        <div class="cell"><div class="cell__num">05</div><h3 class="cell__title" style="font-size:16px">Capacité à auditer et implémenter</h3></div>
+        <div class="cell"><div class="cell__num">06</div><h3 class="cell__title" style="font-size:16px">Approche orientée ROI, qualité et sécurité</h3></div>
+      </div>
+      <div class="impact">Je ne vous aide pas à "jouer avec Claude Code". Je vous aide à en faire un outil de production.</div>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section class="section section--alt" id="faq">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow"><span>12</span> <span>FAQ</span></div>
+          <h2 class="h2">Questions fréquentes</h2>
+        </div>
+        <div class="sec-head__intro body">
+          <p>Les huit questions que les CTO et tech leads me posent en premier. Si la vôtre n'y est pas, posez-la dans le formulaire — j'y répondrai par retour.</p>
+        </div>
+      </div>
+      <div class="faq">
+        <div class="faq__item">
+          <button class="faq__q"><span>Est-ce une formation Claude Code ?</span><span class="plus" aria-hidden></span></button>
+          <div class="faq__a"><div>Non. L'audit peut inclure des recommandations pédagogiques, mais ce n'est pas une formation générique. L'objectif est d'analyser votre workflow réel, votre repo, vos coûts, vos outils et vos pratiques pour identifier ce qui doit être amélioré.</div></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q"><span>Faut-il déjà utiliser Claude Code ?</span><span class="plus" aria-hidden></span></button>
+          <div class="faq__a"><div>C'est préférable. L'audit est plus utile si vous avez déjà des usages, même imparfaits — cela permet d'analyser des situations réelles plutôt que de partir de suppositions. Si vous n'utilisez pas encore Claude Code, l'audit peut aussi servir à définir un plan d'adoption propre.</div></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q"><span>Garantissez-vous une réduction des coûts ?</span><span class="plus" aria-hidden></span></button>
+          <div class="faq__a"><div>Non, pas sans diagnostic. L'objectif est d'identifier les gaspillages et d'améliorer le rapport coût/résultat. Dans certains cas, la priorité sera de réduire les tokens. Dans d'autres, ce sera surtout d'améliorer la qualité des PRs, de réduire le temps de review ou de fiabiliser les workflows.</div></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q"><span>Pouvez-vous implémenter les recommandations ?</span><span class="plus" aria-hidden></span></button>
+          <div class="faq__a"><div>Oui. Après l'audit, une mission d'implémentation peut être proposée pour mettre en place les recommandations prioritaires : CLAUDE.md, skills, agents, MCPs, hooks, workflows GitHub, monitoring ou formation équipe.</div></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q"><span>Est-ce adapté aux données sensibles ?</span><span class="plus" aria-hidden></span></button>
+          <div class="faq__a"><div>Oui, à condition de cadrer précisément les accès, permissions, outils connectés et règles internes. Une partie de l'audit porte justement sur ces sujets : sécurité, gouvernance, permissions, MCPs et risques liés aux secrets.</div></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q"><span>Combien de temps dure l'audit ?</span><span class="plus" aria-hidden></span></button>
+          <div class="faq__a"><div>L'audit pilote dure entre 3 et 5 jours selon la taille du repo, le nombre de personnes impliquées et le niveau de profondeur souhaité.</div></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q"><span>Travaillez-vous avec des freelances ou solo founders ?</span><span class="plus" aria-hidden></span></button>
+          <div class="faq__a"><div>Oui, si le projet est déjà sérieux et possède un repo actif. Mais l'offre est principalement conçue pour les équipes qui ont des enjeux de qualité, coût, sécurité et workflow collectif.</div></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q"><span>Pourquoi ne pas simplement lire la documentation Anthropic ?</span><span class="plus" aria-hidden></span></button>
+          <div class="faq__a"><div>La documentation explique les fonctionnalités. L'audit analyse votre contexte réel : votre repo, vos usages, vos coûts, vos contraintes, vos erreurs actuelles et les automatisations réellement utiles pour votre équipe.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT FORM ═══ -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="sec-head" style="margin-bottom:56px">
+        <div>
+          <div class="eyebrow"><span>13</span> <span>Demande d'audit</span></div>
+          <h2 class="h2">Vérifiez si l'audit est adapté à votre équipe</h2>
+        </div>
+        <div class="sec-head__intro body">
+          <p>Quelques questions pour comprendre votre contexte. Je reviens vers vous sous 48h ouvrées avec une réponse claire — y compris si l'audit ne semble pas pertinent pour votre situation.</p>
+        </div>
+      </div>
+      <form class="form" id="contactForm">
+        <div class="field"><label for="f-prenom">Prénom</label><input id="f-prenom" name="prenom" required /></div>
+        <div class="field"><label for="f-nom">Nom</label><input id="f-nom" name="nom" required /></div>
+        <div class="field"><label for="f-email">Email professionnel</label><input id="f-email" type="email" name="email" required /></div>
+        <div class="field"><label for="f-societe">Société</label><input id="f-societe" name="societe" required /></div>
+        <div class="field"><label for="f-site">Site web</label><input id="f-site" type="url" name="site" placeholder="https://" /></div>
+        <div class="field"><label for="f-role">Rôle</label><input id="f-role" name="role" placeholder="CTO, tech lead, fondateur…" /></div>
+        <div class="field">
+          <label for="f-taille">Taille de l'équipe dev</label>
+          <select id="f-taille" name="taille">
+            <option>1 personne</option><option>2 à 5 développeurs</option><option>6 à 15 développeurs</option><option>16 à 40 développeurs</option><option>Plus de 40 développeurs</option>
+          </select>
+        </div>
+        <div class="field"><label for="f-stack">Stack principale</label><input id="f-stack" name="stack" placeholder="Next.js, Rails, Python…" /></div>
+        <div class="field full">
+          <label for="f-cc">Utilisez-vous déjà Claude Code ?</label>
+          <select id="f-cc" name="cc">
+            <option>Oui, quotidiennement</option><option>Oui, occasionnellement</option><option>Nous testons actuellement</option><option>Pas encore, mais nous voulons le déployer</option><option>Non</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="f-probleme">Principal problème aujourd'hui</label>
+          <select id="f-probleme" name="probleme">
+            <option>Coûts ou tokens trop élevés</option><option>Résultats trop variables</option><option>Manque de qualité dans les PRs</option><option>Pas de workflow commun</option><option>Problèmes de sécurité ou permissions</option><option>Besoin de MCPs, agents ou skills</option><option>Besoin de formation équipe</option><option>Autre</option>
+          </select>
+        </div>
+        <div class="field"><label for="f-repo">Lien GitHub/GitLab (optionnel)</label><input id="f-repo" name="repo" placeholder="https://" /></div>
+        <div class="field">
+          <label for="f-urgence">Niveau d'urgence</label>
+          <select id="f-urgence" name="urgence">
+            <option>Nous voulons avancer ce mois-ci</option><option>Nous explorons pour le trimestre prochain</option><option>Nous cherchons à comprendre</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="f-msg">Message libre</label>
+          <textarea id="f-msg" name="msg" placeholder="Contexte, contraintes, attentes spécifiques…"></textarea>
+        </div>
+        <div class="full" style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+          <button type="submit" class="btn btn--primary">Vérifier si l'audit est adapté <span class="arrow">→</span></button>
+          <span class="mono" style="color:var(--ink-3)">Réponse sous 48h ouvrées · Confidentialité garantie</span>
+        </div>
+      </form>
+      <div class="form-success" id="formSuccess" style="display:none;max-width:720px">
+        <strong>Demande reçue.</strong>
+        Merci. Je vais analyser votre contexte et revenir vers vous avec une réponse adaptée.<br/><br/>
+        En attendant, vous pouvez préparer : un exemple de tâche confiée à Claude Code, un exemple de PR générée par IA, votre structure de repo, vos scripts test/lint/build, vos questions sur coûts, agents, MCPs ou sécurité.
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FINAL CTA ═══ -->
+  <section class="section section--deep">
+    <div class="container final-cta">
+      <div class="eyebrow"><span>Décider</span></div>
+      <h2 class="h2">Vous voulez savoir si Claude Code crée vraiment de la valeur dans votre équipe&nbsp;?</h2>
+      <p class="lead" style="color:var(--text-lead-on-deep)">L'audit vous donne une réponse claire : ce qui fonctionne, ce qui gaspille du temps, ce qui coûte trop cher, ce qui fragilise la qualité, et quoi mettre en place pour industrialiser votre workflow IA.</p>
+      <div class="hero__ctas">
+        <a class="btn btn--accent" href="#contact">Démarrer mon audit maintenant <span class="arrow">→</span></a>
+        <a class="btn btn--ghost" href="#audited" style="color:var(--text-dim-on-deep);border-color:var(--border-on-deep)">Voir le périmètre complet</a>
+      </div>
+      <p class="mono" style="color:var(--accent-dim-on-deep);margin-top:28px">5 audits pilotes disponibles · Agences · Studios produit · Équipes SaaS françaises</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div>© 2026 · Audit Claude Code &amp; Agentic Dev</div>
+    <div class="footer__links">
+      <a href="#contact">Contact</a>
+      <a href="#faq">FAQ</a>
+      
+      <a href="https://linkedin.com/in/matthieu-driss">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  /* Scroll progress bar */
+  var bar = document.getElementById('scrollProgress');
+  var nav = document.getElementById('topnav');
+  var ticking = false;
+  window.addEventListener('scroll', function() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function() {
+      var h = document.documentElement;
+      var max = h.scrollHeight - h.clientHeight;
+      var p = max > 0 ? (h.scrollTop / max) * 100 : 0;
+      if (bar) bar.style.setProperty('--p', p + '%');
+      if (nav) nav.classList.toggle('is-scrolled', h.scrollTop > 24);
+      ticking = false;
+    });
+  }, { passive: true });
+
+  /* Reveal on scroll */
+  var sections = document.querySelectorAll('.section');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  sections.forEach(function(el) { el.classList.add('reveal'); observer.observe(el); });
+
+  /* FAQ accordion */
+  var items = document.querySelectorAll('.faq__item');
+  items.forEach(function(item, i) {
+    var btn = item.querySelector('.faq__q');
+    var panel = item.querySelector('.faq__a');
+    var panelId = 'faq-panel-' + i;
+    panel.setAttribute('id', panelId);
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-controls', panelId);
+    btn.addEventListener('click', function() {
+      var wasOpen = item.getAttribute('data-open') === 'true';
+      items.forEach(function(el) {
+        el.setAttribute('data-open', 'false');
+        el.querySelector('.faq__q').setAttribute('aria-expanded', 'false');
+      });
+      if (!wasOpen) {
+        item.setAttribute('data-open', 'true');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  /* Contact form */
+  var form = document.getElementById('contactForm');
+  var success = document.getElementById('formSuccess');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      form.style.display = 'none';
+      if (success) success.style.display = '';
+      window.scrollTo({ top: success.getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' });
+    });
+  }
+
+  /* Magnetic CTA hover */
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduceMotion) {
+    document.querySelectorAll('.btn--primary, .btn--accent').forEach(function(b) {
+      b.addEventListener('mousemove', function(e) {
+        var r = b.getBoundingClientRect();
+        var dx = (e.clientX - (r.left + r.width / 2)) / r.width;
+        var dy = (e.clientY - (r.top + r.height / 2)) / r.height;
+        b.style.transform = 'translate(' + (dx * 4) + 'px, ' + (dy * 3) + 'px)';
+      });
+      b.addEventListener('mouseleave', function() { b.style.transform = ''; });
+    });
+  }
+
+  /* Mobile nav toggle */
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.querySelector('.nav__links');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', function() {
+      var open = navLinks.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    navLinks.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        navLinks.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  /* Smooth scroll for anchor links */
+  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
