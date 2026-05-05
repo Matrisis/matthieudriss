@@ -1,15 +1,35 @@
 # Matthieu Driss Consulting — Audit IA Entreprise
-> Conseil en stratégie IA pour dirigeants. Audit, diagnostic et plan d'action pour structurer vos usages de l'intelligence artificielle en 5 jours maximum.
+> Conseil en stratégie IA pour dirigeants : audit, diagnostic et plan d'action pour structurer vos usages de l'intelligence artificielle en 5 jours maximum. Service B2B pour PME et grands groupes en France.
 
 ## Pages
-- Audit IA Entreprise: https://consulting.matthieu-driss.fr landing page complète : problème, conséquences, solution, offre (750 € HT), différenciation, crédibilité, FAQ et formulaire de réservation.
+- Accueil — Audit IA Entreprise: https://consulting.matthieu-driss.fr landing page complète avec problème, conséquences, solution, offre (750 € HT), différenciation, crédibilité, FAQ et formulaire de réservation.
 
 ## Offre
+- Nom: Audit IA Entreprise
 - Prix: 750 € HT
 - Durée: 5 jours maximum
 - Format: Remote
-- Cible: Dirigeants (CEO, DG, PME)
+- Cible: Dirigeants (CEO, DG, PME, fondateurs)
+- Livrable: Diagnostic des usages IA, recommandations priorisées, plan d'action concret
+
+## Problème adressé
+Les entreprises utilisent l'IA sans méthode claire : usages improvisés, outils sous-exploités, résultats irréguliers, absence de partage des bonnes pratiques. Le risque est de croire qu'on avance alors que les usages restent superficiels.
+
+## Solution
+Un audit court et actionnable pour identifier les tâches à fort impact, corriger les mauvaises pratiques, prioriser les cas d'usage rentables et repartir avec un plan applicable immédiatement.
+
+## À propos
+Matthieu Driss, développeur senior spécialisé IA depuis 2019. Expérience grands groupes, secteur télécommunications. Approche orientée résultats business, sans hype ni jargon.
 
 ## Contact
 - Email: contact@matthieu-driss.fr
 - LinkedIn: https://www.linkedin.com/in/matthieu-d/
+- Formulaire: https://consulting.matthieu-driss.fr#contact
+
+## Key facts
+- Prix: 750 € HT
+- Délai: 5 jours maximum
+- Places: 5 ouvertes
+- Réponse: sous 48h ouvrées
+- Format: Remote
+- Zone: France
