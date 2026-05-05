@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://consulting.matthieu-driss.fr/sitemap.xml
