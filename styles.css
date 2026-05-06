@@ -968,7 +968,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 0; }
 /* ── pricing card ── */
 .pricing {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 0;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -976,20 +976,20 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 0; }
 }
 @media (max-width: 880px) { .pricing { grid-template-columns: 1fr; } }
 .pricing__main { padding: 40px; background: var(--bg); }
-.pricing__side {
+.pricing__alt {
   padding: 40px;
-  background: var(--bg-alt);
+  background: var(--bg);
   border-left: 1px solid var(--line);
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 @media (max-width: 880px) {
-  .pricing__side { border-left: 0; border-top: 1px solid var(--line); }
+  .pricing__alt { border-left: 0; border-top: 1px solid var(--line); }
 }
 @media (max-width: 560px) {
   .pricing__main { padding: 24px; }
-  .pricing__side  { padding: 24px; }
+  .pricing__alt  { padding: 24px; }
   .pricing__price { font-size: 28px; }
 }
 .pricing__price {

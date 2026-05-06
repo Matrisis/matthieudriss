@@ -32,7 +32,7 @@
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Audit IA & Agentic Dev — Consultation personnalisée · 300€ HT" />
+        <meta property="og:image:alt" content="Audit IA & Agentic Dev — Consultation 300€ HT · MVP Build à partir de 5 000€ HT" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
             name="twitter:image"
@@ -40,7 +40,7 @@
         />
         <meta
             name="twitter:image:alt"
-            content="Audit IA & Agentic Dev — Consultation personnalisée · 300€ HT"
+            content="Audit IA & Agentic Dev — Consultation 300€ HT · MVP Build à partir de 5 000€ HT"
         />
         <meta
             name="twitter:title"
@@ -163,6 +163,22 @@
                             "@type": "Answer",
                             "text": "ChatGPT ne connaît pas votre codebase, votre stack, ni vos contraintes business. La consultation croise votre contexte réel avec une expertise IA qui va au-delà des suggestions génériques d'un LLM."
                         }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Que comprend exactement le MVP Build ?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Architecture, développement des features clés, déploiement et documentation. Pas un prototype — quelque chose qui tourne en production. Délai et prix sur devis selon le scope."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Quel est le délai pour un MVP Build ?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Entre 5 et 10 semaines selon le scope. La consultation préalable (300 € HT) est le meilleur moyen de cadrer précisément le périmètre avant de s'engager sur un devis."
+                        }
                     }
                 ]
             }
@@ -180,12 +196,27 @@
                 },
                 "serviceType": "Consultation IA personnalisée",
                 "areaServed": { "@type": "Country", "name": "France" },
-                "offers": {
-                    "@type": "Offer",
-                    "price": 300,
-                    "priceCurrency": "EUR",
-                    "availability": "https://schema.org/InStock",
-                    "description": "Consultation IA personnalisée — 300 € HT"
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "Services IA",
+                    "itemListElement": [
+                        {
+                            "@type": "Offer",
+                            "name": "Consultation IA",
+                            "price": 300,
+                            "priceCurrency": "EUR",
+                            "availability": "https://schema.org/InStock",
+                            "description": "Consultation IA personnalisée — 300 € HT. Appel 45 min + livrables sous 72h."
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "MVP Build",
+                            "priceRange": "À partir de 5 000 € HT",
+                            "priceCurrency": "EUR",
+                            "availability": "https://schema.org/LimitedAvailability",
+                            "description": "Développement MVP complet — architecture, code et déploiement. Sur devis."
+                        }
+                    ]
                 }
             }
         </script>
@@ -255,7 +286,7 @@
                             <a class="btn btn--ghost" href="#offre">Voir l'offre</a>
                         </div>
                         <div class="hero__meta">
-                            <span class="hero__meta-item">Consultation personnalisée · 300&nbsp;€&nbsp;HT</span>
+                            <span class="hero__meta-item">Consultation · 300&nbsp;€&nbsp;HT · MVP Build · à partir de 5&nbsp;000&nbsp;€&nbsp;HT</span>
                         </div>
                     </div>
 
@@ -475,12 +506,11 @@
                             <div class="eyebrow">
                                 <span>04</span> <span>L'offre</span>
                             </div>
-                            <h2 class="h2">Consultation IA personnalisée</h2>
+                            <h2 class="h2">Deux façons de travailler ensemble</h2>
                         </div>
                         <div class="sec-head__intro body">
                             <p>
-                                Un appel, une analyse et des livrables concrets
-                                pour structurer votre utilisation de l'IA.
+                                Selon où vous en êtes : je diagnostique, ou je construis.
                             </p>
                         </div>
                     </div>
@@ -550,68 +580,100 @@
                                 générique.<br />Vous payez pour des livrables
                                 concrets adaptés à votre stack.
                             </p>
+                            <dl class="pricing__meta" style="margin-top: 28px">
+                                <div>
+                                    <dt>Prix</dt>
+                                    <dd>300&nbsp;€ HT</dd>
+                                </div>
+                                <div>
+                                    <dt>Durée</dt>
+                                    <dd>Appel 45 min + livrables 72h</dd>
+                                </div>
+                                <div>
+                                    <dt>Format</dt>
+                                    <dd>Remote</dd>
+                                </div>
+                                <div>
+                                    <dt>Disponibilité</dt>
+                                    <dd>Premiers contacts offerts</dd>
+                                </div>
+                            </dl>
                         </div>
-                        <div class="pricing__side">
-                            <div>
-                                <div
-                                    class="mono"
-                                    style="
-                                        color: var(--ink-3);
-                                        text-transform: uppercase;
-                                        letter-spacing: 0.06em;
-                                        margin-bottom: 12px;
-                                    "
-                                >
-                                    Format
-                                </div>
-                                <dl class="pricing__meta">
-                                    <div>
-                                        <dt>Prix</dt>
-                                        <dd>300&nbsp;€ HT</dd>
-                                    </div>
-                                    <div>
-                                        <dt>Durée</dt>
-                                        <dd>Appel 45 min + livrables 72h</dd>
-                                    </div>
-                                    <div>
-                                        <dt>Format</dt>
-                                        <dd>Remote</dd>
-                                    </div>
-                                    <div>
-                                        <dt>Disponibilité</dt>
-                                        <dd>Premiers contacts offerts</dd>
-                                    </div>
-                                </dl>
+                        <div class="pricing__alt">
+                            <div
+                                class="mono"
+                                style="
+                                    color: var(--accent);
+                                    margin-bottom: 12px;
+                                "
+                            >
+                                MVP Build · Sur devis
                             </div>
-                            <hr />
-                            <div>
-                                <div
-                                    class="mono"
-                                    style="
-                                        color: var(--ink-3);
-                                        text-transform: uppercase;
-                                        letter-spacing: 0.06em;
-                                        margin-bottom: 12px;
-                                    "
-                                >
-                                    Garantie clarté
-                                </div>
-                                <p
-                                    style="
-                                        margin: 0;
-                                        font-size: 14px;
-                                        color: var(--ink-2);
-                                        line-height: 1.55;
-                                    "
-                                >
-                                    Si la restitution ne vous donne pas un plan
-                                    d'action exploitable, je retravaille le
-                                    rapport gratuitement jusqu'à ce qu'il soit
-                                    clair et actionnable.
-                                </p>
+                            <h3
+                                class="h3"
+                                style="font-size: 28px; margin-bottom: 8px"
+                            >
+                                Je construis votre stack, de zéro à production
+                            </h3>
+                            <p class="body" style="margin-top: 0">
+                                J'architecture, code et déploie votre MVP — de
+                                la conception technique à la mise en production,
+                                sans CI/CD sur-engineeré.
+                            </p>
+                            <div
+                                class="pricing__price"
+                                style="margin-top: 28px"
+                            >
+                                À partir de 5&nbsp;000&nbsp;€
+                                <small>HT</small>
                             </div>
+                            <ul class="pricing__list">
+                                <li>
+                                    Architecture & choix technologiques
+                                </li>
+                                <li>
+                                    Développement des features clés
+                                </li>
+                                <li>
+                                    Déploiement et mise en production
+                                </li>
+                                <li>
+                                    Documentation technique
+                                </li>
+                                <li>
+                                    Tests et validation fonctionnelle
+                                </li>
+                                <li>
+                                    Transfert de compétences à votre équipe
+                                </li>
+                            </ul>
+                            <a class="btn btn--primary" href="#contact"
+                                >Demander un devis
+                                <span class="arrow">→</span></a
+                            >
+                            <dl class="pricing__meta" style="margin-top: 28px">
+                                <div>
+                                    <dt>Prix</dt>
+                                    <dd>À partir de 5&nbsp;000&nbsp;€ HT</dd>
+                                </div>
+                                <div>
+                                    <dt>Délai</dt>
+                                    <dd>Sur devis</dd>
+                                </div>
+                                <div>
+                                    <dt>Format</dt>
+                                    <dd>Remote · livraison</dd>
+                                </div>
+                                <div>
+                                    <dt>Disponibilité</dt>
+                                    <dd>2 projets / mois max</dd>
+                                </div>
+                            </dl>
                         </div>
                     </div>
+                    <p class="mono" style="color: var(--ink-3); margin-top: 20px; text-align: center">
+                        Vous hésitez entre les deux ? La consultation est le point de départ naturel — elle définit le scope avant toute chose.
+                    </p>
                 </div>
             </section>
 
@@ -865,6 +927,36 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="faq__item">
+                            <button class="faq__q">
+                                <span>Que comprend exactement le MVP Build ?</span
+                                ><span class="plus" aria-hidden></span>
+                            </button>
+                            <div class="faq__a">
+                                <div>
+                                    Architecture, développement des features clés, déploiement
+                                    et documentation. Je ne livres pas un prototype — je livre
+                                    quelque chose qui tourne en production. Pas de CI/CD
+                                    sur-engineeré : l'objectif est que vous puissiez maintenir
+                                    et faire évoluer le projet après la livraison.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq__item">
+                            <button class="faq__q">
+                                <span>Quel est le délai pour un MVP Build ?</span
+                                ><span class="plus" aria-hidden></span>
+                            </button>
+                            <div class="faq__a">
+                                <div>
+                                    Le délai dépend du scope. En général, comptez entre
+                                    5 et 10 semaines pour un premier MVP fonctionnel.
+                                    La consultation préalable (300 € HT) est le meilleur
+                                    moyen de cadrer précisément le périmètre avant de
+                                    s'engager sur un devis.
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -881,7 +973,7 @@
                         </div>
                         <div class="sec-head__intro body">
                             <p>
-                                Consultation personnalisée · 300&nbsp;€ HT.
+                                Consultation · 300&nbsp;€ HT ou MVP Build · à partir de 5&nbsp;000&nbsp;€ HT.
                             </p>
                             <p>
                                 Remplissez ce formulaire. Je vous réponds sous
@@ -924,6 +1016,15 @@
                         <div class="field">
                             <label for="f-entreprise">Entreprise ou projet</label
                             ><input id="f-entreprise" name="entreprise" placeholder="Optionnel" />
+                        </div>
+                        <div class="field full">
+                            <label for="f-offre">Quelle offre vous intéresse ? <span style="color:var(--ink-3)">*</span></label>
+                            <select id="f-offre" name="offre" required>
+                                <option value="" disabled selected>Choisissez…</option>
+                                <option value="consultation">Consultation IA · 300 € HT</option>
+                                <option value="mvp-build">MVP Build · à partir de 5 000 € HT</option>
+                                <option value="les-deux">Je ne sais pas encore</option>
+                            </select>
                         </div>
                         <div class="field full">
                             <label for="f-defi">Votre défi IA <span style="color:var(--ink-3)">*</span></label
@@ -1062,7 +1163,7 @@
                             margin-top: 28px;
                         "
                     >
-                        Consultation IA personnalisée · 300&nbsp;€ HT · Appel 45 min + livrables 72h
+                        Consultation · 300&nbsp;€ HT · Appel 45 min + livrables 72h — MVP Build · à partir de 5&nbsp;000&nbsp;€ HT · Sur devis
                     </p>
                 </div>
             </section>
