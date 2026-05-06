@@ -1,25 +1,25 @@
-# Matthieu Driss Consulting — Audit IA Entreprise
-> Conseil en stratégie IA pour dirigeants : audit, diagnostic et plan d'action pour structurer vos usages de l'intelligence artificielle en 5 jours maximum. Service B2B pour PME et grands groupes en France.
+# Matthieu Driss Consulting — Consultation IA & Agentic Dev
+> Consultation IA personnalisée pour SaaS founders et dirigeants tech : diagnostic, plan d'action concret, et outils sur mesure. Format court et actionnable : appel 45 min + livrables sous 72h.
 
 ## Pages
-- Accueil — Audit IA Entreprise: https://consulting.matthieu-driss.fr landing page complète avec problème, conséquences, solution, offre (750 € HT), différenciation, crédibilité, FAQ et formulaire de réservation.
+- Accueil — Consultation IA & Agentic Dev: https://consulting.matthieu-driss.fr — landing page complète avec problème, conséquences, solution, offre (300 € HT), différenciation, crédibilité, FAQ et formulaire de contact.
 
 ## Offre
-- Nom: Audit IA Entreprise
-- Prix: 750 € HT
-- Durée: 5 jours maximum
+- Nom: Consultation IA personnalisée
+- Prix: 300 € HT
+- Durée: Appel 45 min + livrables sous 72h
 - Format: Remote
-- Cible: Dirigeants (CEO, DG, PME, fondateurs)
-- Livrable: Diagnostic des usages IA, recommandations priorisées, plan d'action concret
+- Cible: SaaS founders, dirigeants tech, petites équipes (1-10 personnes)
+- Livrable: Diagnostic des usages IA, plan d'action priorisé, 1 à 2 skills ou templates personnalisés
 
 ## Problème adressé
-Les entreprises utilisent l'IA sans méthode claire : usages improvisés, outils sous-exploités, résultats irréguliers, absence de partage des bonnes pratiques. Le risque est de croire qu'on avance alors que les usages restent superficiels.
+Les fondateurs et les équipes utilisent l'IA sans méthode claire : usages improvisés, outils sous-exploités, résultats irréguliers. Le risque est de croire qu'on avance alors que les usages restent superficiels.
 
 ## Solution
-Un audit court et actionnable pour identifier les tâches à fort impact, corriger les mauvaises pratiques, prioriser les cas d'usage rentables et repartir avec un plan applicable immédiatement.
+Une consultation personnalisée : un appel de 45 min pour comprendre votre stack, une analyse de vos usages, et un document de recommandations avec des outils concrets adaptés à votre contexte.
 
 ## À propos
-Matthieu Driss, développeur senior spécialisé IA depuis 2019. Expérience grands groupes, secteur télécommunications. Approche orientée résultats business, sans hype ni jargon.
+Matthieu Driss, développeur senior spécialisé IA depuis 2019. Expérience grands groupes (télécommunications), adaptée aux équipes agiles. Approche orientée résultats business, sans hype ni jargon.
 
 ## Contact
 - Email: contact@matthieu-driss.fr
@@ -27,9 +27,9 @@ Matthieu Driss, développeur senior spécialisé IA depuis 2019. Expérience gra
 - Formulaire: https://consulting.matthieu-driss.fr#contact
 
 ## Key facts
-- Prix: 750 € HT
-- Délai: 5 jours maximum
-- Places: 5 ouvertes
-- Réponse: sous 48h ouvrées
-- Format: Remote
+- Prix: 300 € HT
+- Format: Appel 45 min + livrables 72h
+- Premiers contacts offerts
+- Réponse: sous 24h
 - Zone: France
+- Garantie: rapport retravaillé gratuitement si pas actionnable
