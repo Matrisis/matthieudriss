@@ -4,13 +4,23 @@
 ## Pages
 - Accueil — Consultation IA & Agentic Dev: https://consulting.matthieu-driss.fr — landing page complète avec problème, conséquences, solution, offre (300 € HT), différenciation, crédibilité, FAQ et formulaire de contact.
 
-## Offre
-- Nom: Consultation IA personnalisée
+## Offres
+
+### Consultation IA personnalisée
 - Prix: 300 € HT
 - Durée: Appel 45 min + livrables sous 72h
 - Format: Remote
 - Cible: SaaS founders, dirigeants tech, petites équipes (1-10 personnes)
 - Livrable: Diagnostic des usages IA, plan d'action priorisé, 1 à 2 skills ou templates personnalisés
+- Disponibilité: Premiers contacts offerts
+
+### MVP Build
+- Prix: À partir de 5 000 € HT — sur devis
+- Format: Remote · livraison
+- Disponibilité: 2 projets / mois max
+- Livrable: Architecture, développement des features clés, déploiement, documentation. Quelque chose qui tourne en production.
+- Délai: 5 à 10 semaines selon le scope
+- Point d'entrée: La consultation 300 € HT est le meilleur moyen de cadrer le scope avant devis.
 
 ## Problème adressé
 Les fondateurs et les équipes utilisent l'IA sans méthode claire : usages improvisés, outils sous-exploités, résultats irréguliers. Le risque est de croire qu'on avance alors que les usages restent superficiels.
