@@ -969,6 +969,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 0; }
 .pricing {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(8, auto);
   gap: 0;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -978,24 +979,42 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 0; }
   margin-left: auto;
   margin-right: auto;
 }
-@media (max-width: 880px) { .pricing { grid-template-columns: 1fr; } }
-.pricing__main { padding: 40px; background: var(--bg); }
+@media (max-width: 880px) { .pricing { grid-template-columns: 1fr; grid-template-rows: none; } }
+.pricing__main,
 .pricing__alt {
-  padding: 40px;
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: 1 / span 8;
+  padding: 0;
   background: var(--bg);
-  border-left: 1px solid var(--line);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
 }
+.pricing__alt { border-left: 1px solid var(--line); }
+.pricing__main > *,
+.pricing__alt > * { padding: 8px 40px; }
+.pricing__main > *:first-child,
+.pricing__alt > *:first-child { padding-top: 40px; }
+.pricing__main > *:last-child,
+.pricing__alt > *:last-child  { padding-bottom: 40px; }
+/* list needs more breathing room */
+.pricing__main > .pricing__list,
+.pricing__alt > .pricing__list { padding: 0 40px 16px; margin: 0; }
+/* buttons: restore natural padding, use margin for indentation */
+.pricing__main > .btn,
+.pricing__alt > .btn { padding: 14px 22px; margin: 8px 40px; }
 @media (max-width: 880px) {
+  .pricing__main,
+  .pricing__alt { display: block; padding: 24px; grid-row: auto; }
   .pricing__alt { border-left: 0; border-top: 1px solid var(--line); }
+  .pricing__main > *,
+  .pricing__alt > * { padding: 0; margin-bottom: 20px; }
+  .pricing__main > *:first-child,
+  .pricing__alt > *:first-child { padding-top: 0; }
+  .pricing__main > *:last-child,
+  .pricing__alt > *:last-child { padding-bottom: 0; margin-bottom: 0; }
+  .pricing__main > .pricing__list,
+  .pricing__alt > .pricing__list { margin: 0 0 20px; padding: 0; }
 }
-@media (max-width: 560px) {
-  .pricing__main { padding: 24px; }
-  .pricing__alt  { padding: 24px; }
-  .pricing__price { font-size: 28px; }
-}
+@media (max-width: 560px) { .pricing__price { font-size: 28px; } }
 .pricing__price {
   font-family: var(--f-sans);
   font-weight: 500;
