@@ -1000,7 +1000,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 0; }
 .pricing__alt > .pricing__list { padding: 0 40px 16px; margin: 0; }
 /* buttons: restore natural padding, use margin for indentation */
 .pricing__main > .btn,
-.pricing__alt > .btn { padding: 14px 22px; margin: 8px 40px; }
+.pricing__alt > .btn { padding: 14px 22px; margin: 8px 40px; width: fit-content; }
 @media (max-width: 880px) {
   .pricing__main,
   .pricing__alt { display: block; padding: 24px; grid-row: auto; }
