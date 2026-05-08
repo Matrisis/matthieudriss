@@ -1,5 +1,8 @@
 .omc/
 .DS_Store
 .playwright-mcp/
-success-banner.png
 .vercel
+
+# Screenshots and debug images
+*.png
+!og-image.png
