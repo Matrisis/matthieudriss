@@ -1,18 +1,18 @@
-# Matthieu Driss Consulting — Consultation IA & Agentic Dev
-> Consultation IA personnalisée pour SaaS founders et dirigeants tech : diagnostic, plan d'action concret, et outils sur mesure. Format court et actionnable : appel 45 min + livrables sous 72h.
+# Matthieu Driss Consulting — Diagnostic IA & Agentic Dev
+> Diagnostic IA pour SaaS founders et dirigeants tech : analyse de vos usages, plan d'action concret, et outils sur mesure. Format court et actionnable : appel 45 min + livrables sous 72h.
 
 ## Pages
-- Accueil — Consultation IA & Agentic Dev: https://consulting.matthieu-driss.fr — landing page complète avec problème, conséquences, solution, offre (300 € HT), différenciation, crédibilité, FAQ et formulaire de contact.
+- Accueil — Diagnostic IA & Agentic Dev: https://consulting.matthieu-driss.fr/ — landing page complète avec problème, conséquences, solution, offre (500 € HT), différenciation, crédibilité, FAQ et formulaire de contact.
 
 ## Offres
 
-### Consultation IA personnalisée
-- Prix: 300 € HT
+### Diagnostic IA
+- Prix: 500 € HT
 - Durée: Appel 45 min + livrables sous 72h
 - Format: Remote
 - Cible: SaaS founders, dirigeants tech, petites équipes (1-10 personnes)
 - Livrable: Diagnostic des usages IA, plan d'action priorisé, 1 à 2 skills ou templates personnalisés
-- Disponibilité: Premiers contacts offerts
+- Disponibilité: Appel découverte gratuit
 
 ### MVP Build
 - Prix: À partir de 5 000 € HT — sur devis
@@ -20,13 +20,13 @@
 - Disponibilité: 2 projets / mois max
 - Livrable: Architecture, développement des features clés, déploiement, documentation. Quelque chose qui tourne en production.
 - Délai: 5 à 10 semaines selon le scope
-- Point d'entrée: La consultation 300 € HT est le meilleur moyen de cadrer le scope avant devis.
+- Point d'entrée: Le Diagnostic IA (500 € HT) est le meilleur moyen de cadrer le scope avant devis.
 
 ## Problème adressé
 Les fondateurs et les équipes utilisent l'IA sans méthode claire : usages improvisés, outils sous-exploités, résultats irréguliers. Le risque est de croire qu'on avance alors que les usages restent superficiels.
 
 ## Solution
-Une consultation personnalisée : un appel de 45 min pour comprendre votre stack, une analyse de vos usages, et un document de recommandations avec des outils concrets adaptés à votre contexte.
+Un diagnostic personnalisé : un appel de 45 min pour comprendre votre stack, une analyse de vos usages, et un document de recommandations avec des outils concrets adaptés à votre contexte.
 
 ## À propos
 Matthieu Driss, développeur senior spécialisé IA depuis 2019. Expérience grands groupes (télécommunications), adaptée aux équipes agiles. Approche orientée résultats business, sans hype ni jargon.
@@ -34,12 +34,12 @@ Matthieu Driss, développeur senior spécialisé IA depuis 2019. Expérience gra
 ## Contact
 - Email: contact@matthieu-driss.fr
 - LinkedIn: https://www.linkedin.com/in/matthieu-d/
-- Formulaire: https://consulting.matthieu-driss.fr#contact
+- Formulaire: https://consulting.matthieu-driss.fr/#contact
 
 ## Key facts
-- Prix: 300 € HT
+- Prix: 500 € HT
 - Format: Appel 45 min + livrables 72h
-- Premiers contacts offerts
+- Appel découverte gratuit
 - Réponse: sous 24h
 - Zone: France
 - Garantie: rapport retravaillé gratuitement si pas actionnable
