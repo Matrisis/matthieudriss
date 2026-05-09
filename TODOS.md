@@ -25,7 +25,7 @@
 - **Depends on:** Nothing — implement whenever first Diagnostic → MVP Build conversion happens.
 
 ### Regenerate og-image.png
-- **Status:** [ ] Open — do after copy ships
+- **Status:** ✓ Complete — 2026-05-09
 - **What:** og-image.png currently shows "Consultation personnalisée · 300€ HT". After the Diagnostic IA rebrand, regenerate with new label/price.
 - **Why:** Social preview cards (LinkedIn, Twitter/X, Slack) use the baked-in image text. Until regenerated, shares will show old label + old price in the visual card.
 - **Context:** Use the same Python Pillow script from 2026-05-06. New text: "Audit IA & Agentic Dev" / "Diagnostic IA · 500€ HT". Low urgency — social caches expire slowly, but regenerate before any active social promotion.
