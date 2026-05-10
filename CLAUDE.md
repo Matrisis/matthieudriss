@@ -9,11 +9,25 @@ For trivial tasks, use judgment and avoid unnecessary ceremony.
 
 ## Project Context
 
-Landing page for Audit Claude Code & Agentic Dev service. French B2B lead generation site. Single-page static site, no build step.
+French B2B lead generation landing page for "Audit IA & Agentic Dev" consulting service.
+Service: "Diagnostic IA" (500€ HT). Funnel: free discovery call → Diagnostic IA → MVP Build.
 
-Stack: HTML, CSS, vanilla JS
+Stack: HTML, CSS, vanilla JS — no build step, no framework, no package manager.
 
-Important directories: `/` — root contains index.html, styles.css, DESIGN.md, CLAUDE.md
+Deployed on Vercel. Push to `main` triggers automatic redeploy — no manual step needed.
+
+Important files:
+- `index.html` — single-page site; all content lives here
+- `styles.css` — all styles; design system defined here
+- `DESIGN.md` — design decisions and color reference
+- `og-image.png` — social preview card; must be regenerated manually when service name or pricing changes in HTML
+- `.vercelignore` — blocks sensitive files (CLAUDE.md, DESIGN.md, etc.) from Vercel production
+- `sitemap.xml` — SEO sitemap
+
+Architecture notes:
+- Teal accent: `oklch(48% 0.09 195)` = `#006d6d`. Use when generating images or matching design.
+- `og-image.png` generated with Python/Pillow using SF Mono (IBM Plex Mono as target font).
+- PageSpeed Insights public API has rate limits — avoid repeated calls in automation.
 
 ---
 
@@ -92,14 +106,10 @@ For multi-step tasks, use this format:
 
 Do not report a task as complete until the implementation has been verified.
 
-Use the strongest applicable verification method:
-- Unit tests
-- Integration tests
-- Type checks
-- Linting
-- Build checks
-- Manual runtime checks
-- UI verification when relevant
+Use the strongest applicable method for this project:
+- Visual browser check for UI changes.
+- grep/inspect HTML source for content changes.
+- Visual check of og-image.png after regeneration.
 
 When reporting completion, include:
 - What changed.
@@ -119,29 +129,43 @@ This includes, but is not limited to:
 - `git clean -fd`
 - `rm -rf`
 - Deleting branches
-- Dropping databases
-- Running destructive migrations
 - Overwriting environment files
-- Merging branches
-- Rebasing shared branches
+- Merging or rebasing shared branches
 - Force installing or removing dependencies
 
 If unsure whether a command is destructive, ask first.
 
 ---
 
+# Medium-Priority Rules
+
+## UI Verification
+
+Browser verification is the primary quality check — this project has no tests or build step.
+
+For UI changes:
+- Verify the page renders without errors in a browser.
+- Check the affected section visually.
+- Use Playwright or Claude Chrome extension when configured.
+- Do not rely only on reading HTML/CSS for visual changes.
+
+If browser verification is unavailable, state that clearly and provide manual steps.
+
+## Coupled Changes
+
+Some changes require paired updates — missing one half is a bug:
+- **Service name or pricing in `index.html`** → also regenerate `og-image.png`.
+- **New sensitive file added to repo** → also add it to `.vercelignore`.
+
+## Content: Do Not Revert
+
+- Service name: "Diagnostic IA" (was "Consultation personnalisée" — do not revert)
+- Price: 500€ HT (was 300€ — do not revert)
+- H1 must contain "Diagnostic IA" keyword for SEO.
+
+---
+
 # Low-Priority References
-
-## Scoped Rule Files
-
-Load these rules when working in the relevant area:
-
-- API work: `docs/ai-rules/api.md`
-- Frontend/UI work: `docs/ai-rules/frontend.md`
-- Database work: `docs/ai-rules/database.md`
-- Testing work: `docs/ai-rules/testing.md`
-
-Do not load unrelated scoped rules unless the task touches that area.
 
 ## Learning From Corrections
 
